@@ -2,82 +2,95 @@
 
 # Interactive Derivative Visualizer
 
-### Visualizing Calculus Through Motion, Geometry, and Intuition
-
 ![Python](https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-orange?style=for-the-badge)
-![NumPy](https://img.shields.io/badge/NumPy-Mathematics-013243?style=for-the-badge&logo=numpy)
+![Matplotlib](https://img.shields.io/badge/Engine-Matplotlib-orange?style=for-the-badge)
+![NumPy](https://img.shields.io/badge/Math-NumPy-013243?style=for-the-badge&logo=numpy)
 ![License](https://img.shields.io/badge/License-Apache%202.0-green?style=for-the-badge)
 
 <br>
 
-**See a function and its derivative animate together in real time.**
+<pre>
+██████╗ ███████╗██████╗ ██╗██╗   ██╗
+██╔══██╗██╔════╝██╔══██╗██║██║   ██║
+██║  ██║█████╗  ██████╔╝██║██║   ██║
+██║  ██║██╔══╝  ██╔══██╗██║╚██╗ ██╔╝
+██████╔╝███████╗██║  ██║██║ ╚████╔╝
+╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝
+</pre>
 
-Track tangent lines, visualize slopes instantly, and build a true geometric intuition for differentiation.
+### Visualizing Calculus Through Motion, Geometry, and Intuition
+
+**See a function, its tangent line, and its derivative animate together in real time.**
 
 </div>
 
 ---
 
-## Demo
+# Demo
 
-### Function & Derivative Visualization
+### Interactive Visualization
 
 <p align="center">
-  <img src="pic1.jpg" width="850">
+  <img src="pic1.jpg" width="900">
 </p>
 
 ### Real-Time Tangent Tracking
 
 <p align="center">
-  <img src="pic2.jpg" width="850">
+  <img src="pic2.jpg" width="900">
 </p>
 
 ### Animation Preview
 
-<p align="center">
-  <img src="W8me6GPdMF.mp4">
-</p>
+> GitHub does not properly display MP4 files inside README images.
+>
+> Convert `W8me6GPdMF.mp4` to `demo.gif` and place it below:
 
-> For the best GitHub presentation, convert the MP4 into a GIF and place it at the top of this README.
+```html
+<p align="center">
+  <img src="demo.gif" width="900">
+</p>
+```
 
 ---
 
 # The Problem
 
-Most students learn derivatives by memorizing formulas:
+Most students learn derivatives through memorization:
 
 ```text
 d/dx(x²) = 2x
-d/dx(sin x) = cos x
+d/dx(sin x) = cos(x)
 d/dx(eˣ) = eˣ
 ```
 
-Yet many never develop an intuition for what a derivative actually represents.
+But these formulas often hide the deeper intuition behind differentiation.
 
-A derivative is not merely a formula.
+A derivative is more than a rule.
 
-It is:
+It represents:
 
-- The slope of a curve
-- The instantaneous rate of change
-- The velocity of a function
-- A geometric relationship between two graphs
+- Instantaneous rate of change
+- Slope of a curve
+- Velocity of a function
+- Local behavior of a mathematical system
 
-Unfortunately, textbooks usually present static diagrams that make these ideas difficult to visualize.
+Traditional textbooks usually rely on static diagrams, making it difficult to connect these concepts visually.
 
-## The Solution
+---
 
-**Interactive Derivative Visualizer** transforms differentiation into a real-time visual experience.
+# The Solution
 
-Instead of staring at equations, users can watch:
+**Interactive Derivative Visualizer** transforms differentiation into a dynamic visual experience.
 
-- A point move along a function
-- Its tangent line update continuously
-- The derivative graph evolve simultaneously
-- Slope magnitude and direction encoded through color
+Instead of memorizing rules, users can watch:
 
-This creates an intuitive understanding of calculus through direct visual feedback.
+- A point moving along a function
+- A tangent line updating continuously
+- The derivative graph responding in real time
+- Slope magnitude and direction represented through color
+
+The result is a much stronger geometric understanding of calculus.
 
 ---
 
@@ -85,81 +98,77 @@ This creates an intuitive understanding of calculus through direct visual feedba
 
 | Feature | Description |
 |----------|-------------|
-| Real-Time Synchronization | Function and derivative animate together |
-| Moving Tangent Line | Displays instantaneous slope at every point |
-| Dynamic Color Mapping | Slope encoded through color transitions |
+| Real-Time Synchronization | Function and derivative animate simultaneously |
+| Dynamic Tangent Line | Visualizes instantaneous slope |
+| Slope-Based Color Mapping | Color changes according to derivative value |
 | Custom Function Input | Enter your own mathematical expressions |
 | Adjustable Domain | Modify graph ranges instantly |
-| Animation Controls | Play, pause, and step frame-by-frame |
-| Resolution Control | Increase or decrease graph precision |
-| Trail Effect | Leave historical points behind the animation |
-| Dark & Light Themes | Switch between presentation and study modes |
-| Numerical Differentiation | Works on arbitrary valid functions |
-
----
-
-# How It Works
-
-```text
-                    User Function Input
-                              │
-                              ▼
-                Safe Mathematical Parser
-                              │
-                              ▼
-                     NumPy Evaluation
-                              │
-          ┌───────────────────┴───────────────────┐
-          │                                       │
-          ▼                                       ▼
-
-      Function f(x)                       Derivative f'(x)
-
-          │                                       │
-          └───────────────────┬───────────────────┘
-                              │
-                              ▼
-                 Matplotlib Animation Engine
-                              │
-                              ▼
-                 Interactive Visual Experience
-```
+| Animation Controls | Play, pause, and step through frames |
+| Trail Effects | Leave historical points behind the moving tracker |
+| Dark / Light Themes | Toggle between presentation and study modes |
+| Numerical Differentiation | Supports arbitrary valid functions |
+| Interactive Widgets | Built entirely using Matplotlib widgets |
 
 ---
 
 # Architecture
 
 ```text
-╔══════════════════════════════════════════════════════╗
-║                VISUALIZER PIPELINE                  ║
-╠══════════════════════════════════════════════════════╣
-║                                                      ║
-║  User Function Input                                ║
-║          │                                           ║
-║          ▼                                           ║
-║  Safe Expression Evaluation                          ║
-║          │                                           ║
-║          ▼                                           ║
-║  NumPy Function Computation                          ║
-║          │                                           ║
-║          ├──► f(x)                                   ║
-║          │                                           ║
-║          └──► f'(x) using np.gradient()              ║
-║                     │                                ║
-║                     ▼                                ║
-║         Matplotlib Animation Loop                    ║
-║                     │                                ║
-║                     ▼                                ║
-║        Interactive Visualization Canvas             ║
-║                                                      ║
-╚══════════════════════════════════════════════════════╝
+╔══════════════════════════════════════════════════════════════╗
+║                    VISUALIZER PIPELINE                      ║
+╠══════════════════════════════════════════════════════════════╣
+║                                                              ║
+║  User Function Input                                         ║
+║          │                                                   ║
+║          ▼                                                   ║
+║  Safe Expression Parser                                      ║
+║          │                                                   ║
+║          ▼                                                   ║
+║  NumPy Evaluation Engine                                     ║
+║          │                                                   ║
+║          ├────────► Function f(x)                            ║
+║          │                                                   ║
+║          └────────► Derivative f'(x)                         ║
+║                        using np.gradient()                  ║
+║                                │                             ║
+║                                ▼                             ║
+║                  Matplotlib Animation Loop                  ║
+║                                │                             ║
+║                                ▼                             ║
+║                 Interactive Visualization                   ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
+```
+
+---
+
+# How It Works
+
+The user enters a mathematical expression:
+
+```python
+sin(x) * exp(-0.2*x)
+```
+
+The program:
+
+1. Parses the expression safely
+2. Generates sample points using NumPy
+3. Computes the derivative numerically
+4. Animates both graphs simultaneously
+5. Updates tangent lines and tracking points every frame
+
+This creates a live visual relationship between:
+
+```text
+Function → Slope → Derivative
 ```
 
 ---
 
 # Mathematical Model
 
-The derivative is approximated numerically using finite differences:
+The derivative is approximated numerically using:
 
 ```python
 dy_dx = np.gradient(y_values, dx)
@@ -171,27 +180,27 @@ Conceptually:
 f'(x) ≈ Δy / Δx
 ```
 
-This allows the application to compute and visualize the instantaneous rate of change for virtually any supported function.
+This allows the visualizer to work with a wide variety of functions without requiring symbolic differentiation.
 
 ---
 
 # Dynamic Slope Color Mapping
 
-One of the most visually distinctive features of the project is slope-based color encoding.
+One of the most distinctive features of the visualizer is its slope-driven color system.
 
-The slope is transformed using the hyperbolic tangent function:
+The instantaneous slope is transformed using:
 
-```math
+```text
 t = tanh(f'(x))
 ```
 
-This smoothly compresses extreme slope values into the interval:
+This smoothly compresses large positive and negative values into:
 
 ```text
-[-1 , 1]
+[-1, 1]
 ```
 
-The value is then mapped into RGB color space.
+The value is then projected into RGB space.
 
 | Slope | Color |
 |---------|---------|
@@ -199,23 +208,23 @@ The value is then mapped into RGB color space.
 | Zero | Purple |
 | Large Positive | Red |
 
-### Visual Interpretation
+### Intuition
 
 ```text
-Negative Slope  →  Blue
-Zero Slope      →  Purple
-Positive Slope  →  Red
+Negative Slope  → Blue
+Zero Slope      → Purple
+Positive Slope  → Red
 ```
 
-This enables users to instantly recognize:
+This allows users to instantly recognize:
 
-- Increasing regions
-- Decreasing regions
+- Increasing intervals
+- Decreasing intervals
 - Local maxima
 - Local minima
 - Stationary points
 
-without reading numerical values.
+without looking at numerical values.
 
 ---
 
@@ -223,14 +232,14 @@ without reading numerical values.
 
 | Control | Function |
 |----------|----------|
-| Function Input | Enter custom mathematical expressions |
-| Domain Input | Set graph boundaries |
+| Function Input | Enter custom functions |
+| Domain Input | Set x-axis range |
 | Speed Slider | Control animation speed |
-| Samples Slider | Adjust graph resolution |
-| Trail Slider | Change history trail length |
+| Samples Slider | Change graph resolution |
+| Trail Slider | Adjust ghost-point history |
 | Play / Pause | Start or stop animation |
-| Theme Toggle | Switch between Dark and Light mode |
-| Arrow Keys | Step through frames manually |
+| Theme Toggle | Switch Dark/Light mode |
+| Arrow Keys | Frame-by-frame navigation |
 
 ---
 
@@ -282,14 +291,17 @@ pi
 e
 ```
 
-### Example Inputs
+---
+
+# Example Inputs
 
 ```python
 sin(x)
-sin(x) * exp(-0.2*x)
+cos(x)
 x**3 - 3*x
-cos(x) + x**2
+sin(x) * exp(-0.2*x)
 sqrt(abs(x))
+log(x + 10)
 ```
 
 ---
@@ -333,31 +345,18 @@ interactive-derivative-visualizer
 
 ---
 
-# Educational Value
+# Educational Applications
 
 This project is useful for:
 
 - Calculus Students
-- Mathematics Educators
+- Mathematics Teachers
 - STEM Demonstrations
-- Interactive Learning
 - Classroom Presentations
-- Self-Study and Concept Building
+- Self-Learning
+- Interactive Education
 
-It helps bridge the gap between symbolic mathematics and geometric intuition.
-
----
-
-# Future Enhancements
-
-- Symbolic differentiation using SymPy
-- Second derivative visualization
-- Integral visualization mode
-- Multi-function comparison
-- 3D derivative surfaces
-- Export animations to GIF/MP4
-- Function presets library
-- Tangent slope value display
+It bridges the gap between symbolic mathematics and geometric intuition.
 
 ---
 
@@ -367,8 +366,21 @@ It helps bridge the gap between symbolic mathematics and geometric intuition.
 |------------|----------|
 | Python | Core application |
 | NumPy | Mathematical computation |
-| Matplotlib | Visualization and animation |
+| Matplotlib | Plotting and animation |
 | Matplotlib Widgets | Interactive controls |
+
+---
+
+# Future Improvements
+
+- Symbolic differentiation with SymPy
+- Second derivative visualization
+- Integral visualization mode
+- Multi-function comparison
+- 3D derivative surfaces
+- GIF/Video export
+- Built-in function presets
+- Derivative value display
 
 ---
 
@@ -376,7 +388,7 @@ It helps bridge the gap between symbolic mathematics and geometric intuition.
 
 Licensed under the Apache License 2.0.
 
-You are free to use, modify, distribute, and build upon this project in accordance with the license terms.
+This project is free to use, modify, and distribute under the terms of the Apache License.
 
 ---
 
@@ -384,8 +396,6 @@ You are free to use, modify, distribute, and build upon this project in accordan
 
 ### Built to make calculus intuitive.
 
-**If this project helped you learn or teach calculus, consider starring the repository.**
-
-⭐ Star the project to support its development.
+⭐ If you found this project useful, consider starring the repository.
 
 </div>
