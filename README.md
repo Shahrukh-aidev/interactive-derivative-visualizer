@@ -42,15 +42,9 @@
 
 ### Animation Preview
 
-> GitHub does not properly display MP4 files inside README images.
->
-> Convert `W8me6GPdMF.mp4` to `demo.gif` and place it below:
-
-```html
 <p align="center">
-  <img src="demo.gif" width="900">
+  <img src="demo.gif" width="900" alt="Interactive Derivative Visualizer Demo">
 </p>
-```
 
 ---
 
